@@ -7,3 +7,7 @@ def login_secure(username, password):
 
 print("\nSecuring Against SQL Injection...")
 secure_result = login_secure(malicious_username, malicious_password)
+if secure_result:
+    print("Vulnerability still exists (not expected).")
+else:
+    print("SQL Injection Mitigated Successfully!")
