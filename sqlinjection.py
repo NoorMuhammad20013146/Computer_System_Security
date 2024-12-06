@@ -12,3 +12,10 @@ cursor.execute('''
         password TEXT
     )
 ''')
+
+# Insert some dummy data
+cursor.executemany('INSERT INTO users (username, password) VALUES (?, ?)', [
+    ('admin', 'admin123'),
+    ('user1', 'password1'),
+    ('user2', 'password2')
+])
