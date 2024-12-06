@@ -34,3 +34,9 @@ malicious_password = "' OR '1'='1"
 
 print("Attempting SQL Injection...")
 result = login_vulnerable(malicious_username, malicious_password)
+
+if result:
+    print("SQL Injection Successful! Retrieved Data:")
+    print(result)
+else:
+    print("SQL Injection Failed.")
