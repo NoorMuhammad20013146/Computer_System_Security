@@ -20,3 +20,10 @@ cursor.executemany('INSERT INTO users (username, password) VALUES (?, ?)', [
     ('user2', 'password2')
 ])
 conn.commit()
+
+# Vulnerable function: Directly interpolating user input into SQL query
+def login_vulnerable(username, password):
+    query = f"SELECT * FROM users WHERE username = '{username}' AND password = '{password}'"
+    print(f"Executing query: {query}")
+    cursor.execute(query)
+    return cursor.fetchall()
