@@ -27,3 +27,7 @@ def login_vulnerable(username, password):
     print(f"Executing query: {query}")
     cursor.execute(query)
     return cursor.fetchall()
+
+# Attacker input: Bypass authentication using SQL Injection
+malicious_username = "' OR '1'='1"
+malicious_password = "' OR '1'='1"
