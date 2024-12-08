@@ -19,4 +19,8 @@ class MaliciousKeyExchanger:
     
 #Converts RSA public key to PEM format
     def serialize_public_key(self, public_key):
-        
+        return public_key.public_bytes(
+            encoding=serialization.Encoding.PEM,
+            format=serialization.PublicFormat.SubjectPublicKeyInfo
+        )
+    
