@@ -9,3 +9,4 @@ class MaliciousKeyExchanger:
         self.compromised_keys = {}
     
 #Create RSA key Pair for malicious purpose
+    def create_attack_keypair(self):
