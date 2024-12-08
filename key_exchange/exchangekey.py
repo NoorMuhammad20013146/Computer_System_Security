@@ -17,3 +17,6 @@ class MaliciousKeyExchanger:
         attacker_public_key = attacker_private_key.public_key()
         return attacker_private_key, attacker_public_key
     
+#Converts RSA public key to PEM format
+    def serialize_public_key(self, public_key):
+        
